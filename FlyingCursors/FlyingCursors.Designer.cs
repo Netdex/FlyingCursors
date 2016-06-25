@@ -36,7 +36,7 @@
             // timerTick
             // 
             this.timerTick.Enabled = true;
-            this.timerTick.Interval = 16;
+            this.timerTick.Interval = 10;
             this.timerTick.Tick += new System.EventHandler(this.timerTick_Tick);
             // 
             // timerSpawn
