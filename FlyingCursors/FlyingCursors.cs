@@ -26,8 +26,7 @@ namespace FlyingCursors
             _cursor = Cursors.Default;
             _sprites = new List<CursorSprite>();
             _random = new Random();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            WindowState = FormWindowState.Maximized;
         }
 
         
