@@ -49,7 +49,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lime;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(375, 369);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FlyingCursors";
@@ -57,7 +57,7 @@
             this.ShowInTaskbar = false;
             this.Text = "MOTHERFUCKING FLYING CURSORS";
             this.TopMost = true;
-            this.TransparencyKey = System.Drawing.Color.Lime;
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.FlyingCursors_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FlyingCursors_Paint);
             this.ResumeLayout(false);

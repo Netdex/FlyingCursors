@@ -23,7 +23,7 @@ namespace FlyingCursors
 
         private void FlyingCursors_Load(object sender, EventArgs e)
         {
-            _cursor = Cursor.Current;
+            _cursor = Cursors.Default;
             _sprites = new List<CursorSprite>();
             _random = new Random();
             Width = Screen.PrimaryScreen.Bounds.Width;
@@ -36,7 +36,7 @@ namespace FlyingCursors
             var g = e.Graphics;
             foreach (var sp in _sprites)
             {
-                _cursor.Draw(g, new Rectangle(sp.LocationX, sp.LocationY, 50, 50));
+                _cursor.Draw(g, new Rectangle(sp.LocationX, sp.LocationY, 10, 10));
             }
         }
 
@@ -46,6 +46,10 @@ namespace FlyingCursors
             {
                 sp.LocationX += sp.VelocityX;
                 sp.LocationY += sp.VelocityY;
+                if (sp.LocationX < 0 || sp.LocationX > Width)
+                    sp.VelocityX *= -1;
+                if (sp.LocationY < 0 || sp.LocationY > Height)
+                    sp.VelocityY *= -1;
             }
             Refresh();
         }
