@@ -79,7 +79,14 @@ namespace FlyingCursors
                 sp.VelocityX = Math.Min(20, sp.VelocityX);
                 sp.VelocityY = Math.Min(20, sp.VelocityY);
             }
-            Refresh();
+        }
+
+        private void timerDraw_Tick(object sender, EventArgs e)
+        {
+            foreach (CursorSprite sp in _sprites)
+            {
+                Invalidate(new Rectangle((int)sp.LocationX - 20, (int)sp.LocationY - 20, 80, 80));
+            }
         }
 
         private void timerSpawn_Tick(object sender, EventArgs e)
@@ -91,8 +98,13 @@ namespace FlyingCursors
                 _random.Next(20) - 10,
                 _types[_random.Next(_types.Count)]);
             _sprites.Add(sp);
-            if (_sprites.Count > 500)
+            if (_sprites.Count > 1500)
                 timerSpawn.Stop();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 
